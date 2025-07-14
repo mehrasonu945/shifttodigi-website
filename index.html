@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShiftToDigi – Build Your Digital Identity</title>
+  <!-- SwiperJS CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Dark Mode -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+      70% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+    }
+    .animate-pulse-glow {
+      animation: pulse-glow 2s infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full z-50 bg-white dark:bg-gray-900/90 shadow-md backdrop-blur-lg">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-600">ShiftTo<span class="text-gray-800 dark:text-white">Digi</span></h1>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="#home" class="hover:text-blue-500 transition">Home</a>
+        <!-- Services Dropdown -->
+<div class="relative group">
+  <button class="text-sm font-medium hover:text-blue-500 transition">
+    Services ▾
+  </button>
+  <div class="absolute left-0 mt-2 w-52 bg-white dark:bg-gray-800 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-200 origin-top">
+    <a href="#ecommerce" class="block px-5 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700">E-Commerce Management</a>
+    <a href="#marketing" class="block px-5 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700">Digital Marketing</a>
+    <a href="#development" class="block px-5 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700">Web Development</a>
+    <a href="#design" class="block px-5 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700">UI/UX Design</a>
+    <a href="#graphics" class="block px-5 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700">Graphic Design</a>
+    <a href="#photoshoots" class="block px-5 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700">Photoshoots</a>
+  </div>
+</div>
+
+        <a href="#about" class="hover:text-blue-500 transition">About</a>
+        <a href="#portfolio" class="hover:text-blue-500 transition">Portfolio</a>
+        <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 pt-24">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 px-6 gap-10 items-center">
+      
+      <!-- Text Content -->
+      <div class="space-y-6" id="hero-text">
+        <h2 class="text-4xl md:text-6xl font-bold leading-tight text-blue-800 dark:text-white">
+          We Build <span class="text-black dark:text-blue-400">Digital Experiences</span>
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300">From E-commerce to Creative Design, ShiftToDigi turns your vision into reality.</p>
+        <a href="#contact" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+          Let’s Talk
+        </a>
+      </div>
+
+      <!-- Lottie Animation -->
+      <div class="flex justify-center" id="hero-animation">
+        <lottie-player 
+          src="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json"
+          background="transparent" 
+          speed="1" 
+          loop 
+          autoplay
+          class="w-80 h-80">
+        </lottie-player>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Dark Mode Toggle -->
+  <button id="theme-toggle"
+    class="fixed bottom-20 right-5 z-50 w-14 h-14 rounded-full shadow-xl flex items-center justify-center text-2xl bg-white dark:bg-gray-800 text-black dark:text-white transition hover:scale-110 animate-pulse-glow border border-gray-300 dark:border-gray-700">
+    🌙
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    // GSAP Hero Animation
+    gsap.from("#hero-text", {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power4.out"
+    });
+
+    gsap.from("#hero-animation", {
+      opacity: 0,
+      scale: 0.8,
+      duration: 1.2,
+      delay: 0.5,
+      ease: "back.out(1.7)"
+    });
+
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'dark') {
+      htmlEl.classList.add('dark');
+      toggleBtn.textContent = '🌞';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const isDark = htmlEl.classList.contains('dark');
+      toggleBtn.textContent = isDark ? '🌞' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+  <!-- Services Section -->
+<section id="services" class="py-20 bg-white dark:bg-gray-950">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">Our Services</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Card -->
+      <div class="group bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow-xl transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h3 class="text-xl font-semibold mb-2 text-blue-700 dark:text-blue-400 group-hover:scale-105 transition">E-Commerce Management</h3>
+        <p class="text-gray-600 dark:text-gray-300">Amazon, Flipkart, Myntra & more — optimized from A to Z.</p>
+      </div>
+
+      <!-- Card -->
+      <div class="group bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow-xl transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h3 class="text-xl font-semibold mb-2 text-blue-700 dark:text-blue-400 group-hover:scale-105 transition">Digital Marketing</h3>
+        <p class="text-gray-600 dark:text-gray-300">Google Ads, Meta Ads, SEO — everything that grows your brand.</p>
+      </div>
+
+      <!-- Card -->
+      <div class="group bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow-xl transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h3 class="text-xl font-semibold mb-2 text-blue-700 dark:text-blue-400 group-hover:scale-105 transition">Website Development</h3>
+        <p class="text-gray-600 dark:text-gray-300">Fast, mobile-first websites with wow-factor animations.</p>
+      </div>
+
+      <!-- Card -->
+      <div class="group bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow-xl transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h3 class="text-xl font-semibold mb-2 text-blue-700 dark:text-blue-400 group-hover:scale-105 transition">UI / UX Design</h3>
+        <p class="text-gray-600 dark:text-gray-300">Modern interfaces that are easy to use and beautifully crafted.</p>
+      </div>
+
+      <!-- Card -->
+      <div class="group bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow-xl transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h3 class="text-xl font-semibold mb-2 text-blue-700 dark:text-blue-400 group-hover:scale-105 transition">Graphic Designing</h3>
+        <p class="text-gray-600 dark:text-gray-300">From logos to packaging — your visuals, but better.</p>
+      </div>
+
+      <!-- Card -->
+      <div class="group bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow-xl transition transform hover:-translate-y-2 hover:shadow-2xl">
+        <h3 class="text-xl font-semibold mb-2 text-blue-700 dark:text-blue-400 group-hover:scale-105 transition">Photoshoots</h3>
+        <p class="text-gray-600 dark:text-gray-300">Product & model photography that sells your story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  gsap.from("#services h2", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#services",
+      start: "top 80%",
+    },
+  });
+
+  gsap.utils.toArray("#services .group").forEach((card, i) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 30,
+      delay: i * 0.1,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: card,
+        start: "top 90%",
+      },
+    });
+  });
+</script>
+<!-- About Section -->
+<section id="about" class="py-20 bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Text -->
+    <div id="about-text">
+      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-6">Who We Are</h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">
+        <strong>ShiftToDigi</strong> is a creative digital agency. We help brands grow online with performance-driven e-commerce, strategic marketing, and standout design.
+      </p>
+      <p class="text-gray-700 dark:text-gray-300 mb-6">
+        From idea to execution, we combine visuals with ROI-focused execution that your business actually needs.
+      </p>
+      <a href="#contact" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+        Let’s Connect
+      </a>
+    </div>
+
+    <!-- Why Us Card -->
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl space-y-4" id="why-card">
+      <h3 class="text-2xl font-bold text-blue-700 dark:text-blue-400 mb-4">Why ShiftToDigi?</h3>
+      <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+        <li class="flex items-start gap-2"><span class="text-blue-500">✔</span> 6+ years of experience</li>
+        <li class="flex items-start gap-2"><span class="text-blue-500">✔</span> Results-driven strategies</li>
+        <li class="flex items-start gap-2"><span class="text-blue-500">✔</span> Creative meets conversion</li>
+        <li class="flex items-start gap-2"><span class="text-blue-500">✔</span> Transparent & collaborative</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20 bg-white dark:bg-gray-950">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-12">Our Projects</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Portfolio Item -->
+      <div class="group overflow-hidden rounded-xl shadow-lg" id="portfolio-card-1">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2020/9/HI/PO/EE/6668018/e-commerce-solutions-1000x1000.jpg" alt="Project 1" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300">
+        <div class="p-4 text-left">
+          <span class="text-sm text-blue-500 font-semibold">E-Commerce</span>
+          <h3 class="text-lg font-bold text-gray-800 dark:text-white mt-1">Amazon Brand Launch</h3>
+        </div>
+      </div>
+
+      <div class="group overflow-hidden rounded-xl shadow-lg" id="portfolio-card-2">
+        <img src="https://cdn.dribbble.com/userupload/41540397/file/original-653db380f1c81d80e87e52380524b167.png?resize=752x&vertical=center" alt="Project 2" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300">
+        <div class="p-4 text-left">
+          <span class="text-sm text-blue-500 font-semibold">Web Design</span>
+          <h3 class="text-lg font-bold text-gray-800 dark:text-white mt-1">Luxury Skincare Store</h3>
+        </div>
+      </div>
+
+      <div class="group overflow-hidden rounded-xl shadow-lg" id="portfolio-card-3">
+        <img src="https://s3.eu-west-2.amazonaws.com/growthcurve.site/media/blog/_1920x1080_crop_center-center_none/cereal.jpg" alt="Project 3" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300">
+        <div class="p-4 text-left">
+          <span class="text-sm text-blue-500 font-semibold">Branding</span>
+          <h3 class="text-lg font-bold text-gray-800 dark:text-white mt-1">D2C Identity Pack</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-blue-50 dark:bg-gray-800">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-6">Let’s Work Together</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-10">Send us a message and we’ll get in touch ASAP.</p>
+
+    <form action="https://formspree.io/f/yourID" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input type="text" name="name" placeholder="Your Name" required class="p-4 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+      <input type="email" name="email" placeholder="Your Email" required class="p-4 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+      <textarea name="message" placeholder="Your Message" rows="5" class="md:col-span-2 p-4 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900"></textarea>
+      <button type="submit" class="md:col-span-2 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition">Send</button>
+    </form>
+  </div>
+</section>
+
+<!-- WhatsApp Floating -->
+<a href="https://wa.me/918826617169" target="_blank" class="fixed bottom-5 right-5 z-50">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" class="w-14 h-14 rounded-full shadow-xl hover:scale-110 transition" alt="Chat on WhatsApp" />
+</a>
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-white dark:bg-gray-900">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-10">What Our Clients Say</h2>
+
+    <!-- Swiper -->
+    <div class="swiper testimonial-swiper">
+      <div class="swiper-wrapper">
+        
+        <!-- Slide 1 -->
+        <div class="swiper-slide bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+          <p class="text-lg text-gray-700 dark:text-gray-300 italic">"ShiftToDigi took our Amazon business to the next level. Their team handled everything!"</p>
+          <h4 class="mt-4 font-semibold text-blue-600 dark:text-blue-400">Anjali Mehra – Skincare Brand</h4>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+          <p class="text-lg text-gray-700 dark:text-gray-300 italic">"Amazing website design and branding. Professional team with quick turnaround."</p>
+          <h4 class="mt-4 font-semibold text-blue-600 dark:text-blue-400">Rahul Taneja – Fashion Store</h4>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+          <p class="text-lg text-gray-700 dark:text-gray-300 italic">"Creative, responsive, and data-driven — we saw results in 2 months!"</p>
+          <h4 class="mt-4 font-semibold text-blue-600 dark:text-blue-400">Priya Shah – Health Startup</h4>
+        </div>
+
+      </div>
+      <!-- Pagination -->
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+</section>
+<script>
+  new Swiper(".testimonial-swiper", {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    spaceBetween: 30,
+  });
+</script>
+
+<!-- Clients -->
+<section class="py-20 bg-white dark:bg-gray-950">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-10">Trusted by Brands</h2>
+
+    <div class="flex items-center gap-10 overflow-x-auto whitespace-nowrap scroll-smooth py-2">
+      <img src="images/client1.png" class="h-12 grayscale hover:grayscale-0 transition" />
+      <img src="images/client2.png" class="h-12 grayscale hover:grayscale-0 transition" />
+      <img src="images/client3.png" class="h-12 grayscale hover:grayscale-0 transition" />
+      <img src="images/client4.png" class="h-12 grayscale hover:grayscale-0 transition" />
+    </div>
+  </div>
+</section>
+<script>
+    <!-- Preloader -->
+<div id="preloader" class="fixed inset-0 bg-white dark:bg-gray-900 z-[9999] flex items-center justify-center transition-all">
+  <div class="text-center">
+    <h1 class="text-4xl font-bold text-blue-600 dark:text-blue-400 animate-pulse">ShiftToDigi</h1>
+    <p class="text-gray-600 dark:text-gray-300 mt-2 text-sm">Loading digital magic...</p>
+  </div>
+</div>
+
+  gsap.from("#about-text", { opacity: 0, x: -60, duration: 1, scrollTrigger: { trigger: "#about", start: "top 80%" } });
+  gsap.from("#why-card", { opacity: 0, x: 60, duration: 1, delay: 0.2, scrollTrigger: { trigger: "#about", start: "top 80%" } });
+
+  gsap.from("#portfolio-card-1", { y: 30, opacity: 0, duration: 1, scrollTrigger: { trigger: "#portfolio", start: "top 80%" } });
+  gsap.from("#portfolio-card-2", { y: 30, opacity: 0, duration: 1.1, scrollTrigger: { trigger: "#portfolio", start: "top 80%" } });
+  gsap.from("#portfolio-card-3", { y: 30, opacity: 0, duration: 1.2, scrollTrigger: { trigger: "#portfolio", start: "top 80%" } });
+</script>
+
+</body>
+</html>
