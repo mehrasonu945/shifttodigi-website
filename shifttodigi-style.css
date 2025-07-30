@@ -1,0 +1,82 @@
+/* Custom Animation for Client Logo Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Decorative Background Blur Effects */
+.bg-blur-blue {
+  background-color: rgba(173, 216, 230, 0.5); /* Light Blue */
+  filter: blur(80px);
+}
+
+.bg-blur-pink {
+  background-color: rgba(255, 182, 193, 0.5); /* Light Pink */
+  filter: blur(80px);
+}
+
+/* WhatsApp Button Floating Style */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25D366;
+  color: white;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebc5b;
+}
+
+/* Logo Bounce Animation */
+@keyframes logoBounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: logoBounce 2s infinite;
+}
+
+/* Pulse Animation for Tagline */
+@keyframes pulseText {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulseText 2s infinite;
+}
+
+/* Section Reveal on Scroll (GSAP handles this but we style fallback here) */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+}
+
+.reveal-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
