@@ -191,16 +191,63 @@
       </div>
     </section>
 
-    <!-- Figma Prototype Iframe -->
-      <iframe
-        class="w-full h-[700px] rounded-b-xl"
-        src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/fI7VkP6MkEiI5on0wNwJy2/Untitled?node-id=3-48863&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A52123"
-        allowfullscreen>
-      </iframe>
+    <!-- UI/UX Preview Section -->
+<section class="bg-[#f1f5f9] py-20 px-4">
+  <div class="container mx-auto text-center">
+    <h2 class="text-gray-800 text-4xl md:text-5xl font-bold mb-16 animate-fade-in">
+      UI/UX Preview Showcase
+    </h2>
+
+    <div class="flex flex-col md:flex-row items-center justify-center gap-12 animate-slide-up">
+
+      <!-- 💻 MacBook Mockup -->
+      <div class="relative bg-white rounded-3xl shadow-xl border-[12px] border-gray-300 overflow-hidden max-w-3xl w-full">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-2 rounded-b bg-gray-300 z-10"></div>
+        
+        <div class="aspect-[16/10] bg-white">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover rounded-b-2xl">
+            <source src="WhatsApp Video 2025-07-30 at 13.31.33_81993ac3.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-[70%] h-6 bg-gray-400 rounded-b-xl shadow-md"></div>
+      </div>
+
+      <!-- 📱 iPhone Mockup -->
+      <div class="flex flex-col items-center gap-4">
+
+        <!-- iPhone Frame -->
+        <div class="relative bg-white border-[8px] border-gray-300 rounded-[3rem] shadow-lg w-[280px] h-[580px] overflow-hidden">
+          <!-- Top Notch -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-4 rounded-b-xl bg-gray-300 z-10 mt-1"></div>
+
+          <!-- Video Inside -->
+          <div class="w-full h-full overflow-hidden rounded-[2rem] pt-6 pb-6 px-1">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover rounded-[2rem]">
+              <source src="WhatsApp Video 2025-07-30 at 13.31.33_81993ac3.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <!-- Bottom Bar -->
+          <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-24 h-2 rounded-full bg-gray-300 z-10"></div>
+        </div>
+
+        <!-- 🔘 Action Buttons -->
+        <div class="flex flex-col gap-3 text-center">
+          <a href="WhatsApp Video 2025-07-30 at 13.31.33_81993ac3.mp4" download class="px-6 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition">
+            ⬇️ Download
+          </a>
+          <a href="#contact" class="px-6 py-2 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700 transition">
+            🚀 Explore Services
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+
+<!-- ✨ Animations -->
 <style>
   @keyframes slide-up {
     0% { opacity: 0; transform: translateY(40px); }
@@ -221,58 +268,88 @@
   }
 </style>
 
-<style>
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-  }
-  .animate-float {
-    animation: float 4s ease-in-out infinite;
-  }
-</style>
+<!-- Portfolio file -->
+<section class="bg-white py-20 px-4">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold text-gray-900 mb-6">Client Portfolio</h2>
+    <p class="text-gray-600 mb-10">Filter and explore the work we've done for our clients</p>
 
-<style>
-  .perspective {
-    perspective: 1200px;
-  }
-  .hero-box {
-    transform: rotateY(0deg);
-    transform-style: preserve-3d;
-    animation: flipInY 2s ease-in-out;
-  }
-  @keyframes flipInY {
-    0% {
-      transform: rotateY(90deg);
-      opacity: 0;
-    }
-    100% {
-      transform: rotateY(0deg);
-      opacity: 1;
-    }
-  }
-</style>
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+      <button class="filter-btn px-4 py-2 bg-blue-600 text-white rounded-full" data-category="all">All</button>
+      <button class="filter-btn px-4 py-2 bg-gray-200 rounded-full" data-category="uiux">UI/UX</button>
+      <button class="filter-btn px-4 py-2 bg-gray-200 rounded-full" data-category="website">Website</button>
+      <button class="filter-btn px-4 py-2 bg-gray-200 rounded-full" data-category="logo">Logo</button>
+    </div>
 
-<!-- Smooth Animations -->
-<style>
-  @keyframes slide-up {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
+    <!-- Portfolio Grid -->
+    <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8" id="portfolio">
 
-  @keyframes fade-in {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
+      <!-- Example: JPG UI/UX -->
+      <div class="portfolio-item" data-category="uiux">
+        <div class="overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+          <img src="Creative Coffee packaging design.jpg" alt="Design 1" class="w-full h-64 object-cover">
+        </div>
+        <div class="mt-3">
+          <p class="text-lg font-semibold">UI Redesign</p>
+          <a href="IMG-20250718-WA0007.pdf" target="_blank" class="text-blue-600 hover:underline text-sm">View PDF</a>
+        </div>
+      </div>
 
-  .animate-slide-up {
-    animation: slide-up 1.2s ease-out forwards;
-  }
+      <!-- Example: Website JPG -->
+      <div class="portfolio-item" data-category="website">
+        <div class="overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+          <img src="website-sample.jpg" alt="Website Sample" class="w-full h-64 object-cover">
+        </div>
+        <div class="mt-3">
+          <p class="text-lg font-semibold">Landing Page</p>
+          <a href="website-sample.pdf" target="_blank" class="text-blue-600 hover:underline text-sm">View PDF</a>
+        </div>
+      </div>
 
-  .animate-fade-in {
-    animation: fade-in 1s ease-out forwards;
-  }
-</style>
+      <!-- Example: Before/After -->
+      <div class="portfolio-item" data-category="uiux">
+        <div class="overflow-hidden rounded-xl shadow hover:shadow-lg transition">
+          <div class="grid grid-cols-2 gap-1">
+            <img src="before.jpg" alt="Before" class="object-cover h-64 w-full rounded-l-xl">
+            <img src="after.jpg" alt="After" class="object-cover h-64 w-full rounded-r-xl">
+          </div>
+        </div>
+        <div class="mt-3">
+          <p class="text-lg font-semibold">Before vs After (UX)</p>
+          <a href="case-study.pdf" target="_blank" class="text-blue-600 hover:underline text-sm">Case Study PDF</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- JS for Filtering -->
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.portfolio-item');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-category');
+
+      // Update active button styles
+      filterButtons.forEach(b => b.classList.remove('bg-blue-600', 'text-white'));
+      btn.classList.add('bg-blue-600', 'text-white');
+
+      // Show/hide items
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+
 
 
 
