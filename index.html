@@ -22,7 +22,7 @@
   </head>
   <body class="bg-white text-gray-800 font-sans">
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919999999999" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600">
+    <a href="https://wa.me/918826617169" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600">
       <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
@@ -30,27 +30,41 @@
     <div class="fixed top-0 left-0 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-50 animate-pulse z-0"></div>
     <div class="fixed bottom-0 right-0 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-50 animate-ping z-0"></div>
 
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow">
-  <div class="container mx-auto flex flex-col md:flex-row items-center justify-between py-2 px-4">
-    <!-- Logo with Title -->
-    <div class="flex items-center space-x-3 animate-pulse">
-      <img src="Untitled-1__1_-removebg-preview.png" alt="ShiftToDigi Logo" class="w-12 h-12 md:w-16 md:h-16 drop-shadow-lg transform hover:scale-110 transition duration-300">
-      <h1 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white tracking-wide">ShiftToDigi</h1>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-3">
+    
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img src="Untitled-1__1_-removebg-preview.png" alt="Logo" class="h-10">
+      <span class="text-xl font-bold text-gray-800">ShiftToDigi</span>
     </div>
 
-    <!-- Navigation with CTA -->
-    <nav class="mt-3 md:mt-0 flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-6 text-center">
-      <a href="#services" class="text-gray-800 dark:text-white hover:text-blue-500 transition">Services</a>
-      <a href="#portfolio" class="text-gray-800 dark:text-white hover:text-blue-500 transition">Portfolio</a>
-      <a href="#about" class="text-gray-800 dark:text-white hover:text-blue-500 transition">About</a>
-      <a href="#contact" class="text-gray-800 dark:text-white hover:text-blue-500 transition">Contact</a>
-      <a href="#contact" class="ml-0 md:ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition">Let’s Talk</a>
+    <!-- Hamburger Button -->
+    <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none text-2xl">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Menu Links -->
+    <nav id="menu" class="hidden md:flex flex-col md:flex-row md:items-center md:space-x-6 space-y-4 md:space-y-0 mt-4 md:mt-0 text-center md:text-left">
+      <a href="#services" class="text-gray-700 hover:text-blue-600">Services</a>
+      <a href="#portfolio" class="text-gray-700 hover:text-blue-600">Portfolio</a>
+      <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
+      <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+      <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-semibold">Let’s Talk</a>
     </nav>
   </div>
 </header>
 
-    <!-- Hero Section -->
+<!-- Toggle Script -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
     <!-- Hero Section with 3D Animated Effects -->
 <section id="hero" class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
   <div class="z-10 text-center animate-float">
@@ -161,36 +175,6 @@
       </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Our Work</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-            <img src="ChatGPT Image Jul 29, 2025, 01_57_03 PM.png" alt="Project 1">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">E-commerce Growth</h3>
-              <p class="text-sm text-gray-500">Amazon sales boosted 3x in 6 months.</p>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-            <img src="original-653db380f1c81d80e87e52380524b167.webp" alt="Project 2">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Website Redesign</h3>
-              <p class="text-sm text-gray-500">UI/UX revamp that improved bounce rate.</p>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-            <img src="https://via.placeholder.com/600x400?text=Project+3" alt="Project 3">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Brand Identity</h3>
-              <p class="text-sm text-gray-500">Full branding package for startup launch.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- UI/UX Preview Section -->
 <section class="bg-[#f1f5f9] py-20 px-4">
   <div class="container mx-auto text-center">
@@ -212,37 +196,6 @@
 
         <div class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-[70%] h-6 bg-gray-400 rounded-b-xl shadow-md"></div>
       </div>
-
-      <!-- 📱 iPhone Mockup -->
-      <div class="flex flex-col items-center gap-4">
-
-        <!-- iPhone Frame -->
-        <div class="relative bg-white border-[8px] border-gray-300 rounded-[3rem] shadow-lg w-[280px] h-[580px] overflow-hidden">
-          <!-- Top Notch -->
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-4 rounded-b-xl bg-gray-300 z-10 mt-1"></div>
-
-          <!-- Video Inside -->
-          <div class="w-full h-full overflow-hidden rounded-[2rem] pt-6 pb-6 px-1">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover rounded-[2rem]">
-              <source src="WhatsApp Video 2025-07-30 at 13.31.33_81993ac3.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <!-- Bottom Bar -->
-          <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-24 h-2 rounded-full bg-gray-300 z-10"></div>
-        </div>
-
-        <!-- 🔘 Action Buttons -->
-        <div class="flex flex-col gap-3 text-center">
-          <a href="WhatsApp Video 2025-07-30 at 13.31.33_81993ac3.mp4" download class="px-6 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition">
-            ⬇️ Download
-          </a>
-          <a href="#contact" class="px-6 py-2 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-700 transition">
-            🚀 Explore Services
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -279,7 +232,6 @@
       <button class="filter-btn px-4 py-2 bg-blue-600 text-white rounded-full" data-category="all">All</button>
       <button class="filter-btn px-4 py-2 bg-gray-200 rounded-full" data-category="uiux">UI/UX</button>
       <button class="filter-btn px-4 py-2 bg-gray-200 rounded-full" data-category="website">Website</button>
-      <button class="filter-btn px-4 py-2 bg-gray-200 rounded-full" data-category="logo">Logo</button>
     </div>
 
     <!-- Portfolio Grid -->
@@ -288,7 +240,7 @@
       <!-- Example: JPG UI/UX -->
       <div class="portfolio-item" data-category="uiux">
         <div class="overflow-hidden rounded-xl shadow hover:shadow-lg transition">
-          <img src="Creative Coffee packaging design.jpg" alt="Design 1" class="w-full h-64 object-cover">
+          <img src="Untitled design.png" alt="Design 1" class="w-full h-64 object-cover">
         </div>
         <div class="mt-3">
           <p class="text-lg font-semibold">UI Redesign</p>
