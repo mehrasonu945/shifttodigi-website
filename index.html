@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="shifttodigi-style.css">
     <style>
+      
       .animate-marquee {
         animation: marquee 20s linear infinite;
       }
@@ -45,11 +46,6 @@
     </button>
 
     <!-- Menu Links -->
-    <nav id="menu" class="hidden md:flex flex-col md:flex-row md:items-center md:space-x-6 space-y-4 md:space-y-0 mt-4 md:mt-0 text-center md:text-left">
-      <a href="#services" class="text-gray-700 hover:text-blue-600">Services</a>
-      <a href="#portfolio" class="text-gray-700 hover:text-blue-600">Portfolio</a>
-      <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
-      <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
       <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-semibold">Let’s Talk</a>
     </nav>
   </div>
@@ -121,49 +117,168 @@
   }
 </style>
 
-
     <!-- Client Logos Marquee -->
-    <section class="py-8 bg-white">
-      <div class="overflow-hidden whitespace-nowrap animate-marquee">
-        <img src="art..png" class="inline-block mx-8">
-        <img src="clayherbs logo.png" class="inline-block mx-8">
-        <img src="clrdv.png" class="inline-block mx-8">
-        <img src="https://via.placeholder.com/150x40?text=Client+4" class="inline-block mx-8">
-      </div>
-    </section>
+    <section class="bg-gray-100 py-20 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-10">Our Trusted Clients</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-12">We’ve had the privilege of working with top brands and startups across industries. Here's a glimpse of our client partnerships.</p>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Our Services</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white shadow p-6 rounded-xl hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold mb-2">E-commerce Account Handling</h3>
-            <p>We manage your presence on Amazon, Flipkart, and other marketplaces to maximize your sales.</p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transform hover:scale-105 transition duration-300">
+        <img src="clayherbs logo.png" alt="Client 1" class="mx-auto h-12 object-contain">
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transform hover:scale-105 transition duration-300">
+        <img src="clrdv.png" alt="Client 2" class="mx-auto h-12 object-contain">
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transform hover:scale-105 transition duration-300">
+        <img src="art..png" alt="Client 3" class="mx-auto h-12 object-contain">
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transform hover:scale-105 transition duration-300">
+        <img src="logo4.png" alt="Client 4" class="mx-auto h-12 object-contain">
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transform hover:scale-105 transition duration-300">
+        <img src="logo5.png" alt="Client 5" class="mx-auto h-12 object-contain">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<section class="bg-white py-20 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-10">Our Services</h2>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 text-left">
+
+      <!-- Service Card with Toggle -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transform transition duration-300">
+        <div onclick="toggleDetails('service1', this)" class="cursor-pointer">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-paint-brush text-blue-600 text-2xl transition-transform"></i>
+              <h3 class="text-lg font-semibold">UI/UX Design</h3>
+            </div>
+            <span class="text-sm text-blue-600 toggle-text">Read More</span>
           </div>
-          <div class="bg-white shadow p-6 rounded-xl hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold mb-2">Digital Marketing</h3>
-            <p>SEO, paid ads, social media – we use all tools to boost your digital reach and growth.</p>
-          </div>
-          <div class="bg-white shadow p-6 rounded-xl hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold mb-2">Web Development</h3>
-            <p>We build responsive, fast, and modern websites tailored to your business needs.</p>
-          </div>
-          <div class="bg-white shadow p-6 rounded-xl hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold mb-2">UI & UX Design</h3>
-            <p>Our expert team designs clean, user-friendly interfaces that keep users engaged.</p>
-          </div>
-          <div class="bg-white shadow p-6 rounded-xl hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold mb-2">Branding</h3>
-            <p>From logos to full identity systems, we create brands that connect and convert.</p>
-          </div>
-          <div class="bg-white shadow p-6 rounded-xl hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold mb-2">Product Photoshoots</h3>
-            <p>Professional, high-quality images for your website, Amazon listings, or social ads.</p>
-          </div>
+          <p class="text-gray-600 text-sm">Creative, user-first designs for modern brands.</p>
+        </div>
+        <div id="service1" class="mt-3 text-gray-600 text-sm hidden">
+          <p>
+            We specialize in user-centered design for apps, websites, and products. Our process includes wireframes, high-fidelity prototypes, and UX research to ensure intuitive and delightful user experiences.
+          </p>
         </div>
       </div>
-    </section>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transform transition duration-300">
+        <div onclick="toggleDetails('service2', this)" class="cursor-pointer">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-code text-green-600 text-2xl transition-transform"></i>
+              <h3 class="text-lg font-semibold">Web Development</h3>
+            </div>
+            <span class="text-sm text-blue-600 toggle-text">Read More</span>
+          </div>
+          <p class="text-gray-600 text-sm">Responsive websites using latest technologies.</p>
+        </div>
+        <div id="service2" class="mt-3 text-gray-600 text-sm hidden">
+          <p>
+            We build fast, responsive, and SEO-friendly websites using HTML, CSS, JS, and frameworks like React. Every website is custom-coded to meet your brand and business needs.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transform transition duration-300">
+        <div onclick="toggleDetails('service3', this)" class="cursor-pointer">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-shopping-cart text-pink-600 text-2xl transition-transform"></i>
+              <h3 class="text-lg font-semibold">E-commerce Management</h3>
+            </div>
+            <span class="text-sm text-blue-600 toggle-text">Read More</span>
+          </div>
+          <p class="text-gray-600 text-sm">Amazon, Flipkart, D2C growth & account handling.</p>
+        </div>
+        <div id="service3" class="mt-3 text-gray-600 text-sm hidden">
+          <p>
+            End-to-end account setup and management for Amazon, Flipkart, Nykaa, and more. We handle product listings, ads, reviews, A+ content, and store optimization.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transform transition duration-300">
+        <div onclick="toggleDetails('service4', this)" class="cursor-pointer">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-bullhorn text-yellow-500 text-2xl transition-transform"></i>
+              <h3 class="text-lg font-semibold">Digital Marketing</h3>
+            </div>
+            <span class="text-sm text-blue-600 toggle-text">Read More</span>
+          </div>
+          <p class="text-gray-600 text-sm">SEO, social media & paid campaigns.</p>
+        </div>
+        <div id="service4" class="mt-3 text-gray-600 text-sm hidden">
+          <p>
+            We offer result-driven SEO, Google Ads, Facebook Ads, and social media content that drives traffic and sales. Real-time analytics and reporting included.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transform transition duration-300">
+        <div onclick="toggleDetails('service5', this)" class="cursor-pointer">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-camera-retro text-indigo-600 text-2xl transition-transform"></i>
+              <h3 class="text-lg font-semibold">Photoshoots</h3>
+            </div>
+            <span class="text-sm text-blue-600 toggle-text">Read More</span>
+          </div>
+          <p class="text-gray-600 text-sm">Creative product/lifestyle photography.</p>
+        </div>
+        <div id="service5" class="mt-3 text-gray-600 text-sm hidden">
+          <p>
+            Studio-quality photoshoots for e-commerce, ads, and social media — including props, styling, and editing tailored to your brand tone.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transform transition duration-300">
+        <div onclick="toggleDetails('service6', this)" class="cursor-pointer">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-pencil-ruler text-red-500 text-2xl transition-transform"></i>
+              <h3 class="text-lg font-semibold">Branding & Identity</h3>
+            </div>
+            <span class="text-sm text-blue-600 toggle-text">Read More</span>
+          </div>
+          <p class="text-gray-600 text-sm">Complete branding solutions from scratch.</p>
+        </div>
+        <div id="service6" class="mt-3 text-gray-600 text-sm hidden">
+          <p>
+            We design unique logos, brand guidelines, business cards, packaging, and complete identity kits that make your business stand out.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleDetails(id, element) {
+    const content = document.getElementById(id);
+    const icon = element.querySelector('i');
+    const toggleText = element.querySelector('.toggle-text');
+    const isHidden = content.classList.contains('hidden');
+
+    content.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+    toggleText.innerText = isHidden ? 'Show Less' : 'Read More';
+  }
+</script>
+
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
@@ -302,31 +417,143 @@
   });
 </script>
 
+    <!-- Button to open modal -->
+<section class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20 px-4 text-center">
+  <h2 class="text-3xl font-bold mb-4">Ready to Work Together?</h2>
+  <p class="mb-8">Click below to tell us your project requirements in detail. We'll build your digital dream.</p>
+  <button onclick="document.getElementById('briefModal').classList.remove('hidden')" class="bg-white text-blue-600 px-6 py-3 rounded-full hover:bg-gray-100 transition font-semibold shadow-lg">Start Project Brief</button>
+</section>
 
+<!-- Modal for client brief form -->
+<div id="briefModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+  <div class="bg-gray-900 text-white w-full max-w-xl p-8 rounded-xl shadow-2xl relative animate-fade-in">
+    <button onclick="document.getElementById('briefModal').classList.add('hidden')" class="absolute top-2 right-4 text-gray-400 text-2xl">&times;</button>
 
+    <h2 class="text-2xl font-bold mb-6 text-center">Tell Us What You Need</h2>
+    <form id="whatsappForm" class="space-y-4 text-left">
+  <input type="text" id="name" placeholder="Your Name" required class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 placeholder-gray-400 text-white">
+  <input type="email" id="email" placeholder="Email Address" required class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 placeholder-gray-400 text-white">
+  <select id="service" required class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white">
+    <option disabled selected>Select Service</option>
+    <option>Website Design</option>
+    <option>UI/UX</option>
+    <option>Digital Marketing</option>
+    <option>E-commerce Management</option>
+    <option>Branding</option>
+    <option>Photoshoot</option>
+  </select>
+  <input type="text" id="timeline" placeholder="Timeline (e.g., 2 weeks)" required class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 placeholder-gray-400 text-white">
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-6">Let’s Build Something Great</h2>
-        <form class="max-w-2xl mx-auto grid grid-cols-1 gap-6">
-          <input type="text" placeholder="Your Name" class="p-4 border rounded">
-          <input type="email" placeholder="Email Address" class="p-4 border rounded">
-          <input type="text" placeholder="Service Required" class="p-4 border rounded">
-          <textarea rows="5" placeholder="Message" class="p-4 border rounded"></textarea>
-          <button type="submit" class="bg-blue-600 text-white py-3 px-6 rounded-lg">Submit</button>
-        </form>
+  <input type="text" id="budget" placeholder="Your Budget (e.g., $1000)" class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 placeholder-gray-400 text-white">
+
+  <input type="file" id="reference" class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white">
+  <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition font-semibold shadow">
+    Send on WhatsApp
+  </button>
+</form>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden text-center mt-6">
+      <div class="text-green-400 text-4xl mb-2 animate-bounce">
+        <i class="fas fa-check-circle"></i>
       </div>
-    </section>
+      <h3 class="text-lg font-semibold">Thanks for submitting your brief!</h3>
+      <p class="text-gray-400 text-sm">We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
 
-    <!-- Call to Action Section -->
-    <section class="py-20 bg-blue-600 text-white text-center">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-4">Let’s Build Your Online Success</h2>
-        <p class="mb-6 text-lg">From strategy to execution – we do it all under one roof.</p>
-        <a href="#contact" class="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-100">Get a Free Consultation</a>
-      </div>
-    </section>
+<!-- Modal animation -->
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+</style>
+
+<!-- Confirmation Script -->
+<script>
+  document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const service = document.getElementById("service").value;
+    const timeline = document.getElementById("timeline").value.trim();
+    const budget = document.getElementById("budget").value.trim();
+    const reference = document.getElementById("reference").files[0]?.name || "No file uploaded";
+    const message = document.getElementById("message").value.trim();
+
+    const fullMessage = `Hello!%0AMy name is *${name}*%0AEmail: ${email}%0AService: ${service}%0ATimeline: ${timeline}%0ABudget: ${budget}%0AReference: ${reference}%0ADetails: ${message}`;
+
+    const phoneNumber = "918826617169"; // your WhatsApp number
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${fullMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  });
+</script>
+
+
+      <!-- Stats Section -->
+<section class="bg-white py-20 px-4 text-center">
+  <h2 class="text-3xl font-bold mb-10">Our Achievements</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+    <div>
+      <h3 class="text-4xl font-bold text-blue-600 counter" data-count="100">0</h3>
+      <p class="mt-2 text-gray-600">Projects Delivered</p>
+    </div>
+    <div>
+      <h3 class="text-4xl font-bold text-blue-600 counter" data-count="50">0</h3>
+      <p class="mt-2 text-gray-600">Clients Served</p>
+    </div>
+    <div>
+      <h3 class="text-4xl font-bold text-blue-600 counter" data-count="25">0</h3>
+      <p class="mt-2 text-gray-600">Industries Covered</p>
+    </div>
+    <div>
+      <h3 class="text-4xl font-bold text-blue-600 counter" data-count="5">0</h3>
+      <p class="mt-2 text-gray-600">Years of Experience</p>
+    </div>
+  </div>
+</section>
+
+<!-- Counter Script -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const options = { threshold: 1 };
+
+  const animateCounter = (entry) => {
+    const counter = entry.target;
+    const count = +counter.getAttribute('data-count');
+    let current = 0;
+
+    const update = () => {
+      current += Math.ceil(count / 50);
+      if (current >= count) {
+        counter.innerText = count;
+      } else {
+        counter.innerText = current;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  counters.forEach(counter => observer.observe(counter));
+</script>
+
 
     <!-- Testimonials Section -->
     <section class="py-20 bg-gray-100 text-center">
@@ -369,6 +596,11 @@
         </div>
       </div>
     </section>
+
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" 
+class="fixed bottom-6 left-6 bg-gray-700 hover:bg-gray-800 text-white p-3 rounded-full shadow z-50">
+  ↑
+</button>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
